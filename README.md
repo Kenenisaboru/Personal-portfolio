@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Personal Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi, I’m **Kenenisa Boru** 👋  
+I am a **Web Developer** and a student at **Haramaya University**. I am open to **remote work** and **freelancing** in web development. I love building responsive, clean, and functional web applications.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🛠️ Skills & Technologies
 
-### `npm start`
+- **Frontend:** HTML, CSS, JavaScript, React.js  
+- **Backend:** Node.js (if applicable)  
+- **Tools & Libraries:** Git, Netlify, Bootstrap / Tailwind CSS  
+- **Other:** Data Structures & Algorithms (C++), Responsive Design, Unit Testing
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 💻 Projects
 
-### `npm test`
+### 1. [Personal Portfolio](https://app.netlify.com/projects/kenenisa-boru-personal-portfoli889dd0/)
+- **Description:** My personal portfolio website showcasing my projects, skills, and experience in web development.  
+- **Tech:** HTML, CSS, JavaScript, React.js, Netlify  
+- **Highlights:**
+  - Fully responsive and modern design  
+  - Live deployment on Netlify  
+  - Clean UI and structured content  
+  - Showcases HUEPDC website, Hospital Management System, and more  
+- **GitHub:** [Portfolio Repository](https://github.com/Kenenisaboru/HUEPDC-Website) *(if portfolio repo is the same)*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. [HUEPDC Official Website](https://huepdc-website12.netlify.app/)
+- **Description:** Official website for HUEPDC showcasing the organization’s mission, activities, announcements, and team with a clean, responsive design.  
+- **Tech:** HTML, CSS, JavaScript, Responsive Design, Netlify  
+- **Highlights:**
+  - Fully responsive layout  
+  - Live deployment on Netlify  
+  - Clean UI and structured content  
+  - Real organizational website  
+- **GitHub:** [HUEPDC Website Repository](https://github.com/Kenenisaboru/HUEPDC-Website)
 
-### `npm run build`
+### 3. [Data Structure & Algorithm Library](https://github.com/Kenenisaboru/Data-structure-and-Algorithm)
+- **Description:** Comprehensive C++ library implementing common data structures and algorithms with detailed documentation.  
+- **Tech:** C++, STL, Algorithms, Data Structures, Unit Testing  
+- **Highlights:**
+  - Performance benchmarks  
+  - Detailed documentation  
+  - Test cases  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 4. Hospital Management System (Coming Soon / In Progress)
+- **Description:** A full-featured hospital management system to manage patients, staff, and appointments.   
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📫 Contact / Socials
 
-### `npm run eject`
+- [GitHub](https://github.com/Kenenisaboru)  
+- [Instagram](https://www.instagram.com/kenenii4/)  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> “Building clean and efficient web applications is my passion.”
