@@ -114,15 +114,14 @@ const App = () => {
       skills: ['React', 'Node.js', 'Full-Stack Development']
     },
     {
-      title: 'Hackathon Winner - Finance App',
+      title: 'Hackathon participant - Finance App',
       org: 'Zemenay Hackathon — 2025',
-      desc: 'First place winner for developing an innovative personal finance management application.',
+      desc: 'Best competitor in a finance app hackathon.',
       icon: <FaAward />,
       image: zemenayCert,
       type: 'hackathon',
       date: 'September 2025',
       verification: '#',
-      skills: ['UI/UX Design', 'Problem Solving', 'Team Leadership']
     },
     {
       title: 'Frontend Development Certification',
@@ -142,7 +141,7 @@ const App = () => {
       icon: <FaCertificate />,
       image: hucissaCert,
       type: 'certificate',
-      date: 'July 2023',
+      date: 'July 2025',
       verification: '#',
       skills: ['HTML5', 'CSS3', 'JavaScript Basics']
     }
@@ -168,7 +167,7 @@ const App = () => {
   ];
 
   const stats = [
-    { label: 'Projects Completed', value: '18+', icon: <FaRocket /> },
+    { label: 'Projects Completed', value: '12+', icon: <FaRocket /> },
     { label: 'Years Experience', value: '1.5+', icon: <FaCalendarAlt /> },
     { label: 'Technologies', value: '8+', icon: <FaCode /> },
     { label: 'GitHub Repositories', value: '25+', icon: <FaGithub /> },
@@ -973,8 +972,8 @@ const App = () => {
                     {award.icon}
                   </div>
                   <div className="award-badge" data-type={award.type}>
-                    {award.type === 'hackathon' ? '🏆 Winner' : 
-                     award.type === 'certificate' ? '📜 Certified' : '🏅 Award'}
+                    {award.type === 'hackathon' ? 'Hackathon' : 
+                     award.type === 'certificate' ? '📜 Certificate' : 'Completed'}
                   </div>
                 </div>
 
