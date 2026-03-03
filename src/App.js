@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
-import { 
+import {
   FaGithub,
   FaCode,
   FaDatabase,
@@ -13,9 +13,9 @@ import {
   FaCalendarAlt,
   FaRocket
 } from 'react-icons/fa';
-import { 
-  SiReact, SiJavascript, SiNodedotjs, SiExpress, SiMongodb, 
-  SiMysql, SiGit, SiTailwindcss, SiPython, SiCplusplus, 
+import {
+  SiReact, SiJavascript, SiNodedotjs, SiExpress, SiMongodb,
+  SiMysql, SiGit, SiTailwindcss, SiPython, SiCplusplus,
   SiHtml5, SiCss3, SiSpringboot, SiPostgresql, SiRedux,
 } from 'react-icons/si';
 
@@ -23,7 +23,7 @@ import {
 import profileImage from './images/photo_2025-10-01_12-53-30.jpg';
 import hucissaCert from './images/photo_2025-04-27_06-58-00.jpg';
 import zemenayCert from './images/photo_2025-12-26_18-19-46.jpg';
-import heroBg from './images/photo-1451187580459-43490279c0fa.jfif';
+import heroBg from './images/1768940342546.jfif';
 import CertificateModal from './components/CertificateModal';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import Header from './components/Header';
@@ -42,9 +42,10 @@ const App = () => {
   const [scrollVisible, setScrollVisible] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const observerRef = useRef(null);
 
-  const tagline = 'Beginner Full-Stack Developer specializing in React, Node.js, and modern web technologies. Passionate about creating impactful digital solutions.';
+  const tagline = 'Full-Stack Developer specializing in React, Node.js, and modern web technologies. Passionate about creating impactful digital solutions.';
 
   const skills = [
     { name: 'React', level: '60%', icon: <SiReact />, color: '#61DAFB', category: 'Frontend' },
@@ -90,7 +91,7 @@ const App = () => {
       status: 'Completed',
       highlights: ['Parent portal', 'Automated reports', 'Mobile responsive']
     },
-  
+
     {
       title: 'Frontend Tricks Collection',
       desc: 'Curated collection of modern frontend techniques, animations, UI components, and best practices.',
@@ -130,7 +131,7 @@ const App = () => {
       skills: ['React', 'Node.js', 'Full-Stack Development']
     },
     {
-      title: 'Hackathon participant - Finance App',
+      title: 'Hackathon Participant - Finance App',
       org: 'Zemenay Hackathon — 2025',
       desc: 'Best competitor in a finance app hackathon.',
       icon: <FaAward />,
@@ -179,12 +180,12 @@ const App = () => {
       contributions: ['Developed student management module', 'Created parent portal interface', 'Implemented REST APIs'],
       tech: ['React', 'Node.js', 'Express', 'MongoDB']
     },
-   
+
   ];
 
   const stats = [
     { label: 'Projects Completed', value: '12+', icon: <FaRocket /> },
-    { label: 'Years Experience', value: '1.5+', icon: <FaCalendarAlt /> },
+    { label: 'Years Experience', value: '2+', icon: <FaCalendarAlt /> },
     { label: 'Technologies', value: '8+', icon: <FaCode /> },
     { label: 'GitHub Repositories', value: '25+', icon: <FaGithub /> },
     { label: 'Code Commits', value: '500+', icon: <FaDatabase /> },
@@ -194,11 +195,18 @@ const App = () => {
   const personalInfo = {
     location: 'Haramaya University, Harar',
     availability: 'Available for full-time & freelance',
-    experience: '1.5+ years in web development',
+    experience: '2+ years in web development',
     education: 'BSc in Information Science'
   };
 
+  // Loading screen
   useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (isLoading) return;
     let index = 0;
     const interval = setInterval(() => {
       setTypedText(tagline.slice(0, index + 1));
@@ -207,7 +215,7 @@ const App = () => {
     }, 30);
 
     return () => clearInterval(interval);
-  }, [tagline]);
+  }, [tagline, isLoading]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -226,7 +234,7 @@ const App = () => {
         }
         return false;
       });
-      
+
       if (current) setActiveSection(current);
     };
 
@@ -235,6 +243,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    if (isLoading) return;
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -251,7 +260,7 @@ const App = () => {
     });
 
     return () => observerRef.current.disconnect();
-  }, []);
+  }, [isLoading]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -285,6 +294,18 @@ const App = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  if (isLoading) {
+    return (
+      <div className="loading-screen">
+        <div className="loader-content">
+          <div className="loader-spinner"></div>
+          <h2 className="loader-name">Kenenisa Boru</h2>
+          <p className="loader-subtitle">Full-Stack Developer</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="app">
