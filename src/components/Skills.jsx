@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaCode, FaServer, FaDatabase, FaTools } from 'react-icons/fa';
 
-const Skills = ({ skills }) => {
+const Skills = ({ skills, bgImage }) => {
   const frontendSkills = skills.filter(skill => skill.category === 'Frontend');
   const backendSkills = skills.filter(skill => skill.category === 'Backend');
   const languageSkills = skills.filter(skill => skill.category === 'Language');
@@ -9,7 +9,12 @@ const Skills = ({ skills }) => {
   const toolSkills = skills.filter(skill => skill.category === 'Tools');
 
   return (
-    <section id="skills" className="section skills">
+    <section
+      id="skills"
+      className="section skills skills-with-bg"
+      style={bgImage ? { backgroundImage: `url(${bgImage})` } : {}}
+    >
+      {bgImage && <div className="skills-overlay"></div>}
       <div className="container">
         <div className="section-header animate-on-scroll">
           <span className="section-label">My Expertise</span>
@@ -38,8 +43,8 @@ const Skills = ({ skills }) => {
                     </div>
                   </div>
                   <div className="skill-bar">
-                    <div 
-                      className="skill-progress" 
+                    <div
+                      className="skill-progress"
                       style={{ width: skill.level, backgroundColor: skill.color }}
                     ></div>
                   </div>
@@ -65,8 +70,8 @@ const Skills = ({ skills }) => {
                     </div>
                   </div>
                   <div className="skill-bar">
-                    <div 
-                      className="skill-progress" 
+                    <div
+                      className="skill-progress"
                       style={{ width: skill.level, backgroundColor: skill.color }}
                     ></div>
                   </div>
@@ -92,8 +97,8 @@ const Skills = ({ skills }) => {
                     </div>
                   </div>
                   <div className="skill-bar">
-                    <div 
-                      className="skill-progress" 
+                    <div
+                      className="skill-progress"
                       style={{ width: skill.level, backgroundColor: skill.color }}
                     ></div>
                   </div>
@@ -119,8 +124,8 @@ const Skills = ({ skills }) => {
                     </div>
                   </div>
                   <div className="skill-bar">
-                    <div 
-                      className="skill-progress" 
+                    <div
+                      className="skill-progress"
                       style={{ width: skill.level, backgroundColor: skill.color }}
                     ></div>
                   </div>
@@ -135,4 +140,5 @@ const Skills = ({ skills }) => {
 };
 
 export default Skills;
+
 
