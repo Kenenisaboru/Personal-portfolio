@@ -1,7 +1,55 @@
-import React from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaFacebookF, FaInstagram, FaCalendarAlt } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaFacebookF, FaInstagram, FaCalendarAlt, FaPaperPlane, FaCheckCircle, FaTelegram } from 'react-icons/fa';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email';
+    }
+    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    return newErrors;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    // Open mailto link as a fallback (no backend)
+    const mailtoLink = `mailto:kenenisaboru998@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
+    window.open(mailtoLink, '_blank');
+
+    setIsSubmitted(true);
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setTimeout(() => setIsSubmitted(false), 5000);
+  };
+
   return (
     <section id="contact" className="section contact">
       <div className="container">
@@ -52,21 +100,25 @@ const Contact = () => {
             <div className="contact-social">
               <h3>Connect With Me</h3>
               <div className="social-links">
-                <a href="https://github.com/Kenenisaboru" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://github.com/Kenenisaboru" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
                   <FaGithub />
                   <span>GitHub</span>
                 </a>
-                <a href="https://linkedin.com/in/kenenisa-boru" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://linkedin.com/in/kenenisa-boru" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
                   <FaLinkedin />
                   <span>LinkedIn</span>
                 </a>
-                <a href="https://web.facebook.com/kanuwiz.jah" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://web.facebook.com/kanuwiz.jah" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">
                   <FaFacebookF />
                   <span>Facebook</span>
                 </a>
-                <a href="https://www.instagram.com/kenenii4/" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://www.instagram.com/kenenii4/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
                   <FaInstagram />
                   <span>Instagram</span>
+                </a>
+                <a href="https://t.me/kenenisaboru" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Telegram">
+                  <FaTelegram />
+                  <span>Telegram</span>
                 </a>
               </div>
             </div>
@@ -77,22 +129,61 @@ const Contact = () => {
               <h3>Start a Project</h3>
               <p>Fill out the form below and I'll get back to you as soon as possible</p>
             </div>
-            
-            <form className="contact-form">
-              <div className="form-group">
-                <input type="text" placeholder="Your Name" required />
+
+            {isSubmitted && (
+              <div className="form-success">
+                <FaCheckCircle />
+                <span>Your email client has been opened! Thank you for reaching out.</span>
               </div>
-              <div className="form-group">
-                <input type="email" placeholder="Your Email" required />
+            )}
+
+            <form className="contact-form" onSubmit={handleSubmit} noValidate>
+              <div className={`form-group ${errors.name ? 'error' : ''}`}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  aria-label="Your name"
+                />
+                {errors.name && <span className="form-error">{errors.name}</span>}
               </div>
-              <div className="form-group">
-                <input type="text" placeholder="Subject" required />
+              <div className={`form-group ${errors.email ? 'error' : ''}`}>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  aria-label="Your email"
+                />
+                {errors.email && <span className="form-error">{errors.email}</span>}
               </div>
-              <div className="form-group">
-                <textarea placeholder="Your Message" rows="5" required></textarea>
+              <div className={`form-group ${errors.subject ? 'error' : ''}`}>
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  aria-label="Subject"
+                />
+                {errors.subject && <span className="form-error">{errors.subject}</span>}
+              </div>
+              <div className={`form-group ${errors.message ? 'error' : ''}`}>
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
+                  aria-label="Your message"
+                ></textarea>
+                {errors.message && <span className="form-error">{errors.message}</span>}
               </div>
               <button type="submit" className="btn btn-primary">
-                <FaEnvelope /> Send Message
+                <FaPaperPlane /> Send Message
               </button>
             </form>
 
@@ -113,4 +204,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
