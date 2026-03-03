@@ -24,6 +24,7 @@ import profileImage from './images/photo_2025-10-01_12-53-30.jpg';
 import hucissaCert from './images/photo_2025-04-27_06-58-00.jpg';
 import zemenayCert from './images/photo_2025-12-26_18-19-46.jpg';
 import heroBg from './images/istockphoto-2170146497-612x612.webp';
+import skillsBg from './images/premium_photo-1682124651258-410b25fa9dc0.avif';
 import CertificateModal from './components/CertificateModal';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import Header from './components/Header';
@@ -334,7 +335,7 @@ const App = () => {
         onOpenImageModal={openImageModal}
       />
 
-      <Skills skills={skills} />
+      <Skills skills={skills} bgImage={skillsBg} />
 
       <Projects projects={projects} />
 
