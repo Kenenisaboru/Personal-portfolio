@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaGithub, FaLinkedin, FaFacebookF, FaInstagram, FaTelegram, FaHeart, FaArrowUp } from 'react-icons/fa';
+import { SiReact } from 'react-icons/si';
 
 const Footer = ({ onScrollToSection }) => {
   return (
@@ -7,10 +9,27 @@ const Footer = ({ onScrollToSection }) => {
         <div className="footer-content">
           <div className="footer-main">
             <div className="footer-logo">
-              <h3>Kenenisa Boru</h3>
+              <h3>Kenenisa <span className="footer-logo-highlight">Boru</span></h3>
               <p>Full-Stack Developer</p>
               <div className="footer-tagline">
                 Building the future, one line of code at a time
+              </div>
+              <div className="footer-social-icons">
+                <a href="https://github.com/Kenenisaboru" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <FaGithub />
+                </a>
+                <a href="https://linkedin.com/in/kenenisa-boru" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <FaLinkedin />
+                </a>
+                <a href="https://web.facebook.com/kanuwiz.jah" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <FaFacebookF />
+                </a>
+                <a href="https://www.instagram.com/kenenii4/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <FaInstagram />
+                </a>
+                <a href="https://t.me/kenenisaboru" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                  <FaTelegram />
+                </a>
               </div>
             </div>
 
@@ -18,9 +37,9 @@ const Footer = ({ onScrollToSection }) => {
               <div className="link-group">
                 <h4>Quick Links</h4>
                 {['about', 'skills', 'projects', 'opensource', 'awards', 'contact'].map(section => (
-                  <button 
-                    key={section} 
-                    className="footer-link" 
+                  <button
+                    key={section}
+                    className="footer-link"
                     onClick={() => onScrollToSection(section)}
                   >
                     {section === 'opensource' ? 'Open Source' : section.charAt(0).toUpperCase() + section.slice(1)}
@@ -33,46 +52,34 @@ const Footer = ({ onScrollToSection }) => {
                 <span className="footer-link">Web Development</span>
                 <span className="footer-link">Full-Stack Solutions</span>
                 <span className="footer-link">API Development</span>
-                <span className="footer-link">Consulting</span>
+                <span className="footer-link">Database Design</span>
               </div>
 
               <div className="link-group">
-                <h4>Resources</h4>
-                <a 
-                  href="https://github.com/Kenenisaboru" 
-                  target="_blank" 
+                <h4>Connect</h4>
+                <a
+                  href="https://github.com/Kenenisaboru"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="footer-link"
                 >
                   GitHub
                 </a>
-                <a 
-                  href="/resume.pdf" 
-                  download 
-                  className="footer-link"
-                >
-                  Download CV
-                </a>
-                <a 
-                  href="https://linkedin.com/in/kenenisa-boru" 
-                  target="_blank" 
+                <a
+                  href="https://linkedin.com/in/kenenisa-boru"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="footer-link"
                 >
                   LinkedIn
                 </a>
+                <a
+                  href="mailto:kenenisaboru998@gmail.com"
+                  className="footer-link"
+                >
+                  Email Me
+                </a>
               </div>
-            </div>
-          </div>
-
-          <div className="footer-newsletter">
-            <h4>Stay Updated</h4>
-            <p>Subscribe for latest projects and insights</p>
-            <div className="newsletter-form">
-              <input type="email" placeholder="Your email address" />
-              <button type="submit" className="btn btn-primary">
-                Subscribe
-              </button>
             </div>
           </div>
         </div>
@@ -80,13 +87,17 @@ const Footer = ({ onScrollToSection }) => {
         <div className="footer-bottom">
           <div className="footer-copyright">
             <p>© {new Date().getFullYear()} Kenenisa Boru. All rights reserved.</p>
-            <p>Built with React & ❤️</p>
+            <p className="footer-built-with">
+              Built with <SiReact className="react-spin" /> React & <FaHeart className="heart-beat" />
+            </p>
           </div>
-          <div className="footer-legal">
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
-            <span>Cookie Policy</span>
-          </div>
+          <button
+            className="footer-back-to-top"
+            onClick={() => onScrollToSection('hero')}
+            aria-label="Back to top"
+          >
+            <FaArrowUp /> Back to Top
+          </button>
         </div>
       </div>
     </footer>
@@ -94,4 +105,3 @@ const Footer = ({ onScrollToSection }) => {
 };
 
 export default Footer;
-
