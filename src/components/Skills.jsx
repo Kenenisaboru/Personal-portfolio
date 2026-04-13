@@ -45,7 +45,7 @@ const Skills = ({ skills, bgImage }) => {
                   <div className="skill-bar">
                     <div
                       className="skill-progress"
-                      style={{ width: skill.level, backgroundColor: skill.color }}
+                      style={{ width: skill.percent || skill.level, backgroundColor: skill.color }}
                     ></div>
                   </div>
                 </div>
@@ -72,7 +72,7 @@ const Skills = ({ skills, bgImage }) => {
                   <div className="skill-bar">
                     <div
                       className="skill-progress"
-                      style={{ width: skill.level, backgroundColor: skill.color }}
+                      style={{ width: skill.percent || skill.level, backgroundColor: skill.color }}
                     ></div>
                   </div>
                 </div>
@@ -99,7 +99,7 @@ const Skills = ({ skills, bgImage }) => {
                   <div className="skill-bar">
                     <div
                       className="skill-progress"
-                      style={{ width: skill.level, backgroundColor: skill.color }}
+                      style={{ width: skill.percent || skill.level, backgroundColor: skill.color }}
                     ></div>
                   </div>
                 </div>
@@ -126,7 +126,7 @@ const Skills = ({ skills, bgImage }) => {
                   <div className="skill-bar">
                     <div
                       className="skill-progress"
-                      style={{ width: skill.level, backgroundColor: skill.color }}
+                      style={{ width: skill.percent || skill.level, backgroundColor: skill.color }}
                     ></div>
                   </div>
                 </div>
