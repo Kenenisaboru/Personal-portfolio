@@ -99,7 +99,7 @@ const Projects = ({ projects }) => {
                       >
                         <FaGithub /> View Code
                       </a>
-                      {project.demo && (
+                      {project.demo && project.demo !== '#' && (
                         <a
                           href={project.demo}
                           target="_blank"
@@ -128,7 +128,7 @@ const Projects = ({ projects }) => {
                       >
                         <FaServer /> Backend
                       </a>
-                      {project.demo && (
+                      {project.demo && project.demo !== '#' && (
                         <a
                           href={project.demo}
                           target="_blank"
