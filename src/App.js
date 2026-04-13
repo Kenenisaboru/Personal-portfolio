@@ -23,6 +23,8 @@ import {
 import profileImage from './images/photo_2025-10-01_12-53-30.jpg';
 import hucissaCert from './images/photo_2025-04-27_06-58-00.jpg';
 import zemenayCert from './images/photo_2025-12-26_18-19-46.jpg';
+import dsaCert from './images/photo_2026-04-13_15-31-12.jpg';
+import hackathonCert from './images/photo_2026-04-13_15-29-56.jpg';
 import heroBg from './images/istockphoto-2170146497-612x612.webp';
 import skillsBg from './images/premium_photo-1682124651258-410b25fa9dc0.avif';
 import CertificateModal from './components/CertificateModal';
@@ -49,21 +51,21 @@ const App = () => {
   const tagline = 'Full-Stack Developer specializing in React, Node.js, and modern web technologies. Passionate about creating impactful digital solutions.';
 
   const skills = [
-    { name: 'React', level: '60%', icon: <SiReact />, color: '#61DAFB', category: 'Frontend' },
-    { name: 'JavaScript', level: '52%', icon: <SiJavascript />, color: '#F7DF1E', category: 'Language' },
-    { name: 'Node.js', level: '68%', icon: <SiNodedotjs />, color: '#339933', category: 'Backend' },
-    { name: 'Express', level: '55%', icon: <SiExpress />, color: '#000000', category: 'Backend' },
-    { name: 'MongoDB', level: '22%', icon: <SiMongodb />, color: '#47A248', category: 'Database' },
-    { name: 'MySQL', level: '78%', icon: <SiMysql />, color: '#4479A1', category: 'Database' },
-    { name: 'PostgreSQL', level: '8%', icon: <SiPostgresql />, color: '#336791', category: 'Database' },
-    { name: 'Git/GitHub', level: '74%', icon: <SiGit />, color: '#F05032', category: 'Tools' },
-    { name: 'TailwindCSS', level: '30%', icon: <SiTailwindcss />, color: '#06B6D4', category: 'Frontend' },
-    { name: 'Redux', level: '5%', icon: <SiRedux />, color: '#764ABC', category: 'Frontend' },
-    { name: 'Python', level: '18%', icon: <SiPython />, color: '#3776AB', category: 'Language' },
-    { name: 'C++', level: '30%', icon: <SiCplusplus />, color: '#00599C', category: 'Language' },
-    { name: 'Spring Boot', level: '40%', icon: <SiSpringboot />, color: '#6DB33F', category: 'Backend' },
-    { name: 'HTML5', level: '78%', icon: <SiHtml5 />, color: '#E34F26', category: 'Frontend' },
-    { name: 'CSS3', level: '55%', icon: <SiCss3 />, color: '#1572B6', category: 'Frontend' },
+    { name: 'React', level: 'Advanced', percent: '85%', icon: <SiReact />, color: '#61DAFB', category: 'Frontend' },
+    { name: 'JavaScript', level: 'Advanced', percent: '80%', icon: <SiJavascript />, color: '#F7DF1E', category: 'Language' },
+    { name: 'Node.js', level: 'Advanced', percent: '75%', icon: <SiNodedotjs />, color: '#339933', category: 'Backend' },
+    { name: 'Express', level: 'Advanced', percent: '72%', icon: <SiExpress />, color: '#000000', category: 'Backend' },
+    { name: 'MySQL', level: 'Advanced', percent: '78%', icon: <SiMysql />, color: '#4479A1', category: 'Database' },
+    { name: 'Git/GitHub', level: 'Advanced', percent: '85%', icon: <SiGit />, color: '#F05032', category: 'Tools' },
+    { name: 'HTML5', level: 'Advanced', percent: '90%', icon: <SiHtml5 />, color: '#E34F26', category: 'Frontend' },
+    { name: 'CSS3', level: 'Advanced', percent: '85%', icon: <SiCss3 />, color: '#1572B6', category: 'Frontend' },
+    { name: 'Spring Boot', level: 'Intermediate', percent: '60%', icon: <SiSpringboot />, color: '#6DB33F', category: 'Backend' },
+    { name: 'TailwindCSS', level: 'Intermediate', percent: '65%', icon: <SiTailwindcss />, color: '#06B6D4', category: 'Frontend' },
+    { name: 'C++', level: 'Intermediate', percent: '60%', icon: <SiCplusplus />, color: '#00599C', category: 'Language' },
+    { name: 'MongoDB', level: 'Beginner', percent: '40%', icon: <SiMongodb />, color: '#47A248', category: 'Database' },
+    { name: 'PostgreSQL', level: 'Beginner', percent: '35%', icon: <SiPostgresql />, color: '#336791', category: 'Database' },
+    { name: 'Python', level: 'Beginner', percent: '45%', icon: <SiPython />, color: '#3776AB', category: 'Language' },
+    { name: 'Redux', level: 'Beginner', percent: '30%', icon: <SiRedux />, color: '#764ABC', category: 'Frontend' },
   ];
 
   const projects = [
@@ -72,10 +74,8 @@ const App = () => {
       desc: 'A comprehensive full-stack hospital management system with patient management, appointment scheduling, medical records, and billing integration.',
       link: 'https://github.com/Kenenisaboru/Hospital-management-system',
       tech: ['React', 'Node.js', 'Express', 'MySQL', 'REST API', 'JWT', 'Redux'],
-      featured: true,
       type: 'Full-Stack',
       icon: <FaHospital />,
-      demo: '#',
       status: 'Completed',
       highlights: ['Real-time updates', 'Secure authentication', 'Multi-role access']
     },
@@ -85,23 +85,18 @@ const App = () => {
       frontend: 'https://github.com/Kenenisaboru/school-managment-system-frontend',
       backend: 'https://github.com/Kenenisaboru/School-manegment-system-backend',
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Redux', 'Material-UI', 'JWT'],
-      featured: true,
       type: 'Full-Stack',
       icon: <FaSchool />,
-      demo: '#',
       status: 'Completed',
       highlights: ['Parent portal', 'Automated reports', 'Mobile responsive']
     },
-
     {
       title: 'Frontend Tricks Collection',
       desc: 'Curated collection of modern frontend techniques, animations, UI components, and best practices.',
       link: 'https://github.com/Kenenisaboru/All-my-frontend-trick',
       tech: ['HTML5', 'CSS3', 'JavaScript', 'GSAP', 'Animations', 'Responsive Design'],
-      featured: false,
       type: 'Frontend',
       icon: <FaLaptopCode />,
-      demo: '#',
       status: 'Ongoing',
       highlights: ['Reusable components', 'Performance tips', 'Accessibility patterns']
     },
@@ -110,16 +105,55 @@ const App = () => {
       desc: 'Comprehensive C++ library implementing common data structures and algorithms with detailed documentation.',
       link: 'https://github.com/Kenenisaboru/Data-structure-and-Algorithm',
       tech: ['C++', 'STL', 'Algorithms', 'Data Structures', 'Unit Testing'],
-      featured: false,
       type: 'Algorithm',
       icon: <FaGraduationCap />,
-      demo: '#',
       status: 'Completed',
       highlights: ['Performance benchmarks', 'Detailed docs', 'Test cases']
     }
   ];
 
+  // Featured Repositories
+  const featuredRepositories = [
+    {
+      title: 'Hospital Management System',
+      description: 'Developed the frontend interface for a hospital management system using React and Tailwind CSS.',
+      link: 'https://github.com/Kenenisaboru/Hospital-management-system',
+      contributions: ['Built responsive patient management interface', 'Implemented real-time updates', 'Enhanced user experience'],
+      tech: ['React', 'Tailwind CSS', 'JavaScript']
+    },
+    {
+      title: 'School Management System',
+      description: 'Contributed to both frontend and backend of a comprehensive school management system.',
+      link: 'https://github.com/Kenenisaboru/school-managment-system-frontend',
+      contributions: ['Developed student management module', 'Created parent portal interface', 'Implemented REST APIs'],
+      tech: ['React', 'Node.js', 'Express', 'MongoDB']
+    },
+  ];
+
+  // Awards and Certifications
   const awards = [
+    {
+      title: 'In-Depth Data Structure & Algorithm',
+      org: 'Intensive Training Program — 2026',
+      desc: 'Successfully completed 45 days of intensive training in advanced data structures and algorithmic problem-solving.',
+      icon: <FaGraduationCap />,
+      image: dsaCert,
+      type: 'certificate',
+      date: 'April 2026',
+      verification: '#',
+      skills: ['JavaScript', 'Data Structures', 'Algorithms', 'Optimization']
+    },
+    {
+      title: 'East Ethiopian Cursor Hackathon Finalist',
+      org: 'East Ethiopian Hackathon — 2026',
+      desc: 'Top 6 finalist for building "LifeLink", an innovative mobile application solution.',
+      icon: <FaAward />,
+      image: hackathonCert,
+      type: 'hackathon',
+      date: 'April 2026',
+      verification: '#',
+      skills: ['Mobile Development', 'React Native', 'Problem Solving']
+    },
     {
       title: 'Web Development Excellence Award',
       org: 'HUCCISA — 2024',
@@ -163,25 +197,6 @@ const App = () => {
       verification: '#',
       skills: ['HTML5', 'CSS3', 'JavaScript Basics']
     }
-  ];
-
-  // Simplified Open Source Contributions
-  const openSourceContributions = [
-    {
-      title: 'Hospital Management System',
-      description: 'Developed the frontend interface for a hospital management system using React and Tailwind CSS.',
-      link: 'https://github.com/Kenenisaboru/Hospital-management-system',
-      contributions: ['Built responsive patient management interface', 'Implemented real-time updates', 'Enhanced user experience'],
-      tech: ['React', 'Tailwind CSS', 'JavaScript']
-    },
-    {
-      title: 'School Management System',
-      description: 'Contributed to both frontend and backend of a comprehensive school management system.',
-      link: 'https://github.com/Kenenisaboru/school-managment-system-frontend',
-      contributions: ['Developed student management module', 'Created parent portal interface', 'Implemented REST APIs'],
-      tech: ['React', 'Node.js', 'Express', 'MongoDB']
-    },
-
   ];
 
   const stats = [
@@ -339,7 +354,7 @@ const App = () => {
 
       <Projects projects={projects} />
 
-      <OpenSource contributions={openSourceContributions} />
+      <OpenSource contributions={featuredRepositories} />
 
       <Awards awards={awards} onOpenImageModal={openImageModal} />
 
