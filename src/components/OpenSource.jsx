@@ -6,11 +6,11 @@ const OpenSource = ({ contributions }) => {
     <section id="opensource" className="section opensource">
       <div className="container">
         <div className="section-header animate-on-scroll">
-          <span className="section-label">Community</span>
-          <h2 className="section-title">Open Source Contributions</h2>
+          <span className="section-label">GitHub</span>
+          <h2 className="section-title">Featured Repositories</h2>
           <div className="section-divider"></div>
           <p className="section-subtitle">
-            Active contributor to open source projects with meaningful contributions
+            A selection of my personal projects and contributions available on GitHub
           </p>
         </div>
 
@@ -40,8 +40,8 @@ const OpenSource = ({ contributions }) => {
             <div className="github-stat">
               <FaRocket className="stat-icon" />
               <div className="stat-content">
-                <h3>4+</h3>
-                <p>Open Source Contributions</p>
+                <h3>10+</h3>
+                <p>Major Projects</p>
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@ const OpenSource = ({ contributions }) => {
               <div className="contribution-header">
                 <h3>{contribution.title}</h3>
                 <span className="contribution-badge">
-                  <FaGithub /> Open Source
+                  <FaGithub /> Repository
                 </span>
               </div>
               
@@ -93,7 +93,7 @@ const OpenSource = ({ contributions }) => {
         <div className="opensource-cta animate-on-scroll">
           <div className="cta-content">
             <h3>Want to Collaborate?</h3>
-            <p>I'm always open to contributing to meaningful open source projects.</p>
+            <p>I'm always open to collaborating on interesting projects.</p>
             <a 
               href="https://github.com/Kenenisaboru"
               target="_blank"
